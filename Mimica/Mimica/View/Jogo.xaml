@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="Mimica.View.Jogo">
+    <ContentPage.Content>
+        <StackLayout Margin="20" VerticalOptions="Center">
+            <Frame HasShadow="True" BorderColor="black">
+                <StackLayout>
+                    <StackLayout HorizontalOptions="Center">
+                        <Label Text="{Binding NomeGrupo}"/>
+                        <Label Text="{Binding PalavraPontuacao}"/>
+                        <Label Text="{Binding Palavra}" HorizontalOptions="Center" FontSize="24"/>
+                        <Button Text="MOSTRAR" 
+                                IsVisible="{Binding IsVisibleBtnMostrar}" 
+                                Command="{Binding MostrarPalavra}"
+                                CornerRadius="15"/>
+                    </StackLayout>
+                    <StackLayout IsVisible="{Binding IsVisibleContainerContagem}">
+                        <Label Text="{Binding TextoContagem}" FontSize="100" 
+                               HorizontalOptions="CenterAndExpand"/>
+                        <Label Text="seg" HorizontalOptions="CenterAndExpand"/>
+                    </StackLayout>
+                    <StackLayout IsVisible="{Binding IsVisibleContainerDecisao}" Orientation="Horizontal" HorizontalOptions="Center">
+                        <Button Text="Acertou" Command="{Binding Acertou}"
+                                BackgroundColor="LightGreen" CornerRadius="15"/>
+                        <Button Text="Errou" Command="{Binding Errou}"
+                                BackgroundColor="OrangeRed" CornerRadius="15"/>
+                    </StackLayout>
+                    <StackLayout IsVisible="{Binding IsVisibleContainerIniciar}">
+                        <Button Text="INICIAR" Command="{Binding Iniciar}" CornerRadius="15"/>
+                    </StackLayout>
+                    <StackLayout/>
+                </StackLayout>
+            </Frame>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

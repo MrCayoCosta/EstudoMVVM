@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="Mimica.View.Inicio">
+    <ContentPage.Content>
+        <StackLayout Margin="20" VerticalOptions="Center">
+            <Frame HasShadow="True" >
+                <StackLayout>
+                    <Label Text="Nome do grupo 1"/>
+                    <Entry Placeholder="(opcional)" Text="{Binding Jogo.Grupo1.Nome}"/>
+                    <Label Text="Nome do Grupo 2"/>
+                    <Entry Placeholder="(opcional)" Text="{Binding Jogo.Grupo1.Nome}"/>
+                    <Label Text="Nível"/>
+                    <Picker SelectedItem="{Binding Jogo.Nivel}">
+                        <Picker.Items>
+                            <x:String>Aleatório</x:String>
+                            <x:String>Fácil</x:String>
+                            <x:String>Médio</x:String>
+                            <x:String>Difícil</x:String>
+                        </Picker.Items>
+                    </Picker>
+                    <Label Text="Tempo de Cada palavra(seg)"/>
+                    <Entry Text="{Binding Jogo.TempoPalavra}"/>
+                    <Label Text="Rodadas"/>
+                    <Entry Text="{Binding Jogo.Rodadas}"/>
+
+                    <Button Text="INICIAR" CornerRadius="15" Command="{Binding IniciarCommand}"/>
+                </StackLayout>
+            </Frame>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

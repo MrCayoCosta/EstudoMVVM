@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="Mimica.View.Resultado">
+    <ContentPage.Content>
+        <ScrollView>
+        <StackLayout >
+            <Frame>
+                <StackLayout>
+                    <Label Text="Grupo 1" Margin="0,0,0,15" FontSize="24" 
+                           FontAttributes="Bold" TextColor="Black"/>
+                    <Frame BorderColor="Black">
+                        <Label Text="30 pontos" Padding="45" FontSize="40" TextColor="Black"/>
+                    </Frame>
+                    <Label Text="Grupo 2" Margin="0,15,0,15" FontSize="24" 
+                           FontAttributes="Bold" TextColor="Black"/>
+                    <Frame BorderColor="Black">
+                        <Label Text="120 pontos" Padding="45" FontSize="40" TextColor="green"/>
+                    </Frame>
+                        <StackLayout>
+                        <Button Text="Jogar outra vez" BackgroundColor="LightBlue" Margin="0,50,0,0"/>
+                        </StackLayout>
+                    </StackLayout>
+            </Frame>
+        </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>
