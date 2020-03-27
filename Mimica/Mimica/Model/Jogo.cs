@@ -10,6 +10,8 @@ namespace Mimica.Model
         public Grupo Grupo2 { get; set; }
 
         public string Nivel { get; set; }
+        public int NivelNumerico { get; set; }
+
 
         public short TempoPalavra { get; set; }
         public short Rodadas { get; set; }

@@ -74,7 +74,7 @@ namespace Mimica.ViewModel
                 grupo = Armazenamento.Jogo.Grupo1;
                 Armazenamento.RodadaAtual++;
             }
-            if(Armazanemanto.Armazenamento.RodadaAtual > Armazenamento.Jogo.Rodadas)
+            if (Armazanemanto.Armazenamento.RodadaAtual > Armazenamento.Jogo.Rodadas)
             {
                 App.Current.MainPage = new View.Resultado();
             }
@@ -100,12 +100,12 @@ namespace Mimica.ViewModel
             {
                 TextoContagem = tempo.ToString();
                 tempo--;
-                if(tempo < 0)
+                if (tempo < 0)
                 {
                     TextoContagem = "Tempo esgotado!";
                 }
                 return true;
-            }); 
+            });
         }
 
         private void MostrarPalavraAction()
@@ -114,6 +114,43 @@ namespace Mimica.ViewModel
             IsVisibleBtnMostrar = false;
             IsVisibleContainerIniciar = true;
             IsVisibleContainerDecisao = true;
+
+            var NumNivel = Armazanemanto.Armazenamento.Jogo.NivelNumerico;
+
+            if (NumNivel == 0)
+            {
+                Random r = new Random();
+                int nivel = r.Next(0, 2);
+                int i = r.Next(0, Armazanemanto.Armazenamento.Palavras[nivel].Length);
+                Palavra = Armazanemanto.Armazenamento.Palavras[nivel][i];
+                PalavraPontuacao = (byte)((nivel == 0) ? 1 : (nivel == 1) ? 3 : 5);
+                //Aleatório
+
+            }
+            if (NumNivel == 1)
+            {
+                Random r = new Random();
+                int i = r.Next(0, Armazenamento.Palavras[NumNivel - 1].Length);
+                Palavra = Armazenamento.Palavras[NumNivel - 1][i];
+                PalavraPontuacao = 1;
+                //Fácil
+            }
+            if (NumNivel == 2)
+            {
+                Random r = new Random();
+                int i = r.Next(0, Armazenamento.Palavras[NumNivel - 1].Length);
+                Palavra = Armazenamento.Palavras[NumNivel - 1][i];
+                PalavraPontuacao = 1;
+                //Médio
+            }
+            if (NumNivel == 3)
+            {
+                Random r = new Random();
+                int i = r.Next(0, Armazenamento.Palavras[NumNivel - 1].Length);
+                Palavra = Armazenamento.Palavras[NumNivel - 1][i];
+                PalavraPontuacao = 1;
+                //Difícil
+            }
         }
 
         public event PropertyChangedEventHandler PropertyChanged;

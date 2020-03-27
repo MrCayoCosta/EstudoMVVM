@@ -7,25 +7,25 @@
              x:Class="Mimica.View.Resultado">
     <ContentPage.Content>
         <ScrollView>
-        <StackLayout >
-            <Frame>
-                <StackLayout>
-                    <Label Text="Grupo 1" Margin="0,0,0,15" FontSize="24" 
+            <StackLayout >
+                <Frame>
+                    <StackLayout>
+                        <Label Text="{Binding Jogo.Grupo1.Nome}" Margin="0,0,0,15" FontSize="24"
                            FontAttributes="Bold" TextColor="Black"/>
-                    <Frame BorderColor="Black">
-                        <Label Text="30 pontos" Padding="45" FontSize="40" TextColor="Black"/>
-                    </Frame>
-                    <Label Text="Grupo 2" Margin="0,15,0,15" FontSize="24" 
+                        <Frame BorderColor="Black">
+                            <Label Text="{Binding Jogo.Grupo1.Pontuacao}" Padding="45" FontSize="40" TextColor="Black"/> 
+                        </Frame>
+                        <Label Text="{Binding Jogo.Grupo2.Nome}" Margin="0,15,0,15" FontSize="24"
                            FontAttributes="Bold" TextColor="Black"/>
-                    <Frame BorderColor="Black">
-                        <Label Text="120 pontos" Padding="45" FontSize="40" TextColor="green"/>
-                    </Frame>
+                        <Frame BorderColor="Black">
+                            <Label Text="{Binding Jogo.Grupo2.Pontuacao}" Padding="45" FontSize="40" TextColor="green"/>
+                        </Frame>
                         <StackLayout>
-                        <Button Text="Jogar outra vez" BackgroundColor="LightBlue" Margin="0,50,0,0"/>
+                            <Button Text="Jogar outra vez" Command="{Binding JogarNovamente}" BackgroundColor="LightBlue" Margin="0,50,0,0"/>
                         </StackLayout>
                     </StackLayout>
-            </Frame>
-        </StackLayout>
+                </Frame>
+            </StackLayout>
         </ScrollView>
     </ContentPage.Content>
 </ContentPage>

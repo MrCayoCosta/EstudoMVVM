@@ -12,9 +12,9 @@
                     <Label Text="Nome do grupo 1"/>
                     <Entry Placeholder="(opcional)" Text="{Binding Jogo.Grupo1.Nome}"/>
                     <Label Text="Nome do Grupo 2"/>
-                    <Entry Placeholder="(opcional)" Text="{Binding Jogo.Grupo1.Nome}"/>
+                    <Entry Placeholder="(opcional)" Text="{Binding Jogo.Grupo2.Nome}"/>
                     <Label Text="Nível"/>
-                    <Picker SelectedItem="{Binding Jogo.Nivel}">
+                    <Picker SelectedItem="{Binding Jogo.Nivel}"  SelectedIndex="{Binding Jogo.NivelNumerico}">
                         <Picker.Items>
                             <x:String>Aleatório</x:String>
                             <x:String>Fácil</x:String>

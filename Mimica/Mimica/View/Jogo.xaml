@@ -10,16 +10,25 @@
             <Frame HasShadow="True" BorderColor="black">
                 <StackLayout>
                     <StackLayout HorizontalOptions="Center">
-                        <Label Text="{Binding NomeGrupo}"/>
-                        <Label Text="{Binding PalavraPontuacao}"/>
-                        <Label Text="{Binding Palavra}" HorizontalOptions="Center" FontSize="24"/>
-                        <Button Text="MOSTRAR" 
-                                IsVisible="{Binding IsVisibleBtnMostrar}" 
+                        <StackLayout Orientation="Horizontal">
+                            <Label Text="Grupo:"/>
+                            <Label Text="{Binding NomeGrupo}"/>
+                        </StackLayout>
+                        <StackLayout Orientation="Horizontal">
+                            <Label Text="Pontuação:"/>
+                            <Label Text="{Binding PalavraPontuacao}"/>
+                        </StackLayout>
+                        <StackLayout Orientation="Vertical">
+                            <Label Text="Palavra:"/>
+                            <Label Text="{Binding Palavra}" HorizontalOptions="Center" FontSize="16"/>
+                        </StackLayout>
+                        <Button Text="MOSTRAR"
+                                IsVisible="{Binding IsVisibleBtnMostrar}"
                                 Command="{Binding MostrarPalavra}"
                                 CornerRadius="15"/>
                     </StackLayout>
                     <StackLayout IsVisible="{Binding IsVisibleContainerContagem}">
-                        <Label Text="{Binding TextoContagem}" FontSize="100" 
+                        <Label Text="{Binding TextoContagem}" FontSize="100"
                                HorizontalOptions="CenterAndExpand"/>
                         <Label Text="seg" HorizontalOptions="CenterAndExpand"/>
                     </StackLayout>
