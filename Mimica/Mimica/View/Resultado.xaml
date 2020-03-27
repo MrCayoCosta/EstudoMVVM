@@ -13,12 +13,14 @@
                         <Label Text="{Binding Jogo.Grupo1.Nome}" Margin="0,0,0,15" FontSize="24"
                            FontAttributes="Bold" TextColor="Black"/>
                         <Frame BorderColor="Black">
-                            <Label Text="{Binding Jogo.Grupo1.Pontuacao}" Padding="45" FontSize="40" TextColor="Black"/> 
+                            <Label Text="{Binding Jogo.Grupo1.Pontuacao}" Padding="45" FontSize="40" TextColor="Black"
+                                   HorizontalTextAlignment="Center"/> 
                         </Frame>
                         <Label Text="{Binding Jogo.Grupo2.Nome}" Margin="0,15,0,15" FontSize="24"
                            FontAttributes="Bold" TextColor="Black"/>
                         <Frame BorderColor="Black">
-                            <Label Text="{Binding Jogo.Grupo2.Pontuacao}" Padding="45" FontSize="40" TextColor="green"/>
+                            <Label Text="{Binding Jogo.Grupo2.Pontuacao}" Padding="45" FontSize="40" TextColor="Black"
+                                   HorizontalTextAlignment="Center"/>
                         </Frame>
                         <StackLayout>
                             <Button Text="Jogar outra vez" Command="{Binding JogarNovamente}" BackgroundColor="LightBlue" Margin="0,50,0,0"/>
