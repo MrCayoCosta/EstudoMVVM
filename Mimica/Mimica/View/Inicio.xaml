@@ -3,33 +3,33 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:cab="clr-namespace:Mimica.View.Util"
              mc:Ignorable="d"
              x:Class="Mimica.View.Inicio">
     <ContentPage.Content>
-        <StackLayout Margin="20" VerticalOptions="Center">
-            <Frame HasShadow="True" >
-                <StackLayout>
-                    <Label Text="Nome do grupo 1"/>
-                    <Entry Placeholder="(opcional)" Text="{Binding Jogo.Grupo1.Nome}"/>
-                    <Label Text="Nome do Grupo 2"/>
-                    <Entry Placeholder="(opcional)" Text="{Binding Jogo.Grupo2.Nome}"/>
-                    <Label Text="Nível"/>
-                    <Picker SelectedItem="{Binding Jogo.Nivel}"  SelectedIndex="{Binding Jogo.NivelNumerico}">
-                        <Picker.Items>
-                            <x:String>Aleatório</x:String>
-                            <x:String>Fácil</x:String>
-                            <x:String>Médio</x:String>
-                            <x:String>Difícil</x:String>
-                        </Picker.Items>
-                    </Picker>
-                    <Label Text="Tempo de Cada palavra(seg)"/>
-                    <Entry Text="{Binding Jogo.TempoPalavra}"/>
-                    <Label Text="Rodadas"/>
-                    <Entry Text="{Binding Jogo.Rodadas}"/>
-
-                    <Button Text="INICIAR" CornerRadius="15" Command="{Binding IniciarCommand}"/>
-                </StackLayout>
-            </Frame>
+        <StackLayout>
+            <cab:Cabecalho/>
+            <StackLayout Style="{StaticResource Container}">
+                <Label Text="{Binding MsgErro}" TextColor="Red"/>
+                <Label Text="Nome do grupo 1"/>
+                <Entry Placeholder="(opcional)" Text="{Binding Jogo.Grupo1.Nome}"/>
+                <Label Text="Nome do Grupo 2"/>
+                <Entry Placeholder="(opcional)" Text="{Binding Jogo.Grupo2.Nome}"/>
+                <Label Text="Nível"/>
+                <Picker SelectedItem="{Binding Jogo.Nivel}"  SelectedIndex="{Binding Jogo.NivelNumerico}">
+                    <Picker.Items>
+                        <x:String>Aleatório</x:String>
+                        <x:String>Fácil</x:String>
+                        <x:String>Médio</x:String>
+                        <x:String>Difícil</x:String>
+                    </Picker.Items>
+                </Picker>
+                <Label Text="Tempo de Cada palavra(seg)"/>
+                <Entry Text="{Binding Jogo.TempoPalavra}"/>
+                <Label Text="Rodadas"/>
+                <Entry Text="{Binding Jogo.Rodadas}"/>
+                <Button Text="INICIAR" CornerRadius="15" Command="{Binding IniciarCommand}"/>
+            </StackLayout>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

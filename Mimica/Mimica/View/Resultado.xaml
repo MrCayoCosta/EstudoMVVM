@@ -3,30 +3,34 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:cab="clr-namespace:Mimica.View.Util"
              mc:Ignorable="d"
              x:Class="Mimica.View.Resultado">
     <ContentPage.Content>
         <ScrollView>
             <StackLayout >
-                <Frame>
-                    <StackLayout>
-                        <Label Text="{Binding Jogo.Grupo1.Nome}" Margin="0,0,0,15" FontSize="24"
-                           FontAttributes="Bold" TextColor="Black"/>
-                        <Frame BorderColor="Black">
-                            <Label Text="{Binding Jogo.Grupo1.Pontuacao}" Padding="45" FontSize="40" TextColor="Black"
-                                   HorizontalTextAlignment="Center"/> 
-                        </Frame>
-                        <Label Text="{Binding Jogo.Grupo2.Nome}" Margin="0,15,0,15" FontSize="24"
-                           FontAttributes="Bold" TextColor="Black"/>
-                        <Frame BorderColor="Black">
-                            <Label Text="{Binding Jogo.Grupo2.Pontuacao}" Padding="45" FontSize="40" TextColor="Black"
-                                   HorizontalTextAlignment="Center"/>
-                        </Frame>
+                <cab:Cabecalho/>
+                <StackLayout Style="{StaticResource Container}">
+                    <Frame>
                         <StackLayout>
-                            <Button Text="Jogar outra vez" Command="{Binding JogarNovamente}" BackgroundColor="LightBlue" Margin="0,50,0,0"/>
+                            <Label Text="{Binding Jogo.Grupo1.Nome}" Margin="0,0,0,15" FontSize="24"
+                           FontAttributes="Bold" TextColor="Black"/>
+                            <Frame BorderColor="Black">
+                                <Label Text="{Binding Jogo.Grupo1.Pontuacao}" Padding="45" FontSize="40" TextColor="Black"
+                                   HorizontalTextAlignment="Center"/>
+                            </Frame>
+                            <Label Text="{Binding Jogo.Grupo2.Nome}" Margin="0,15,0,15" FontSize="24"
+                           FontAttributes="Bold" TextColor="Black"/>
+                            <Frame BorderColor="Black">
+                                <Label Text="{Binding Jogo.Grupo2.Pontuacao}" Padding="45" FontSize="40" TextColor="Black"
+                                   HorizontalTextAlignment="Center"/>
+                            </Frame>
+                            <StackLayout>
+                                <Button Text="Jogar outra vez" Command="{Binding JogarNovamente}" BackgroundColor="LightBlue" Margin="0,50,0,0"/>
+                            </StackLayout>
                         </StackLayout>
-                    </StackLayout>
-                </Frame>
+                    </Frame>
+                </StackLayout>
             </StackLayout>
         </ScrollView>
     </ContentPage.Content>

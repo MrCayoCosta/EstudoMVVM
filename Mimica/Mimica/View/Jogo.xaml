@@ -3,20 +3,28 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:conv="clr-namespace:Mimica.View.Util"
+             xmlns:cab="clr-namespace:Mimica.View.Util"
              mc:Ignorable="d"
              x:Class="Mimica.View.Jogo">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <conv:LabelPontuacaoConverter x:Key="convPontuacao"/>
+        </ResourceDictionary>
+    </ContentPage.Resources>
     <ContentPage.Content>
-        <StackLayout Margin="20" VerticalOptions="Center">
-            <Frame HasShadow="True" BorderColor="black">
+        <StackLayout Spacing="0">
+            <cab:Cabecalho/>
+            <StackLayout Style="{StaticResource Container}">
                 <StackLayout>
                     <StackLayout HorizontalOptions="Center">
-                        <StackLayout Orientation="Horizontal">
-                            <Label Text="Grupo:"/>
-                            <Label Text="{Binding NomeGrupo}"/>
-                        </StackLayout>
+                        <Label Text="{Binding NumeroGrupo}"/>
+                        <Label Text="{Binding NomeGrupo}"/>
+
                         <StackLayout Orientation="Horizontal">
                             <Label Text="Pontuação:"/>
-                            <Label Text="{Binding PalavraPontuacao}"/>
+                            <Label Text="{Binding PalavraPontuacao,
+                                         Converter={StaticResource Key=convPontuacao}}"/>
                         </StackLayout>
                         <StackLayout Orientation="Vertical">
                             <Label Text="Palavra:"/>
@@ -43,7 +51,7 @@
                     </StackLayout>
                     <StackLayout/>
                 </StackLayout>
-            </Frame>
+            </StackLayout>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

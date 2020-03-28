@@ -11,7 +11,7 @@ namespace Mimica.ViewModel
     public class JogoViewModel : INotifyPropertyChanged
     {
         public Grupo Grupo { get; set; }
-
+        public string NumeroGrupo { get; set; }
         public string NomeGrupo { get; set; }
 
         private string _Palavra { get; set; }
@@ -44,6 +44,16 @@ namespace Mimica.ViewModel
         {
             Grupo = grupo;
             NomeGrupo = grupo.Nome;
+            if (grupo == Armazenamento.Jogo.Grupo1)
+            {
+                NumeroGrupo = "Grupo 1";
+            }
+            else
+            {
+                NumeroGrupo = "Grupo 2";
+            }
+
+
             IsVisibleContainerContagem = false;
             IsVisibleContainerIniciar = false;
             IsVisibleContainerDecisao = false;
