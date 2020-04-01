@@ -7,7 +7,7 @@
              mc:Ignorable="d"
              x:Class="Mimica.View.Inicio">
     <ContentPage.Content>
-        <StackLayout>
+        <StackLayout Spacing="0">
             <cab:Cabecalho/>
             <StackLayout Style="{StaticResource Container}">
                 <Label Text="{Binding MsgErro}" TextColor="Red"/>
