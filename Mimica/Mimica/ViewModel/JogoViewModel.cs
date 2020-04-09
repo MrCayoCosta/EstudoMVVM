@@ -26,8 +26,8 @@ namespace Mimica.ViewModel
         private bool _IsVisibleContainerContagem;
         public bool IsVisibleContainerContagem { get { return _IsVisibleContainerContagem; } set { _IsVisibleContainerContagem = value; OnPropertyChanged("IsVisibleContainerContagem"); } }
 
-        private bool _IsVisibleContainerIniciar;
-        public bool IsVisibleContainerIniciar { get { return _IsVisibleContainerIniciar; } set { _IsVisibleContainerIniciar = value; OnPropertyChanged("IsVisibleContainerIniciar"); } }
+        private bool _IsVisibleBtnIniciar;
+        public bool IsVisibleBtnIniciar { get { return _IsVisibleBtnIniciar; } set { _IsVisibleBtnIniciar = value; OnPropertyChanged("IsVisibleBtnIniciar"); } }
 
         private bool _IsVisibleBtnMostrar;
         public bool IsVisibleBtnMostrar { get { return _IsVisibleBtnMostrar; } set { _IsVisibleBtnMostrar = value; OnPropertyChanged("IsVisibleBtnMostrar"); } }
@@ -55,10 +55,10 @@ namespace Mimica.ViewModel
 
 
             IsVisibleContainerContagem = false;
-            IsVisibleContainerIniciar = false;
+            IsVisibleBtnIniciar = false;
             IsVisibleContainerDecisao = false;
             IsVisibleBtnMostrar = true;
-            Palavra = "****************";
+            Palavra = "**************";
 
             MostrarPalavra = new Command(MostrarPalavraAction);
             Acertou = new Command(AcertouAction);
@@ -102,7 +102,7 @@ namespace Mimica.ViewModel
 
         private void IniciarAction(object obj)
         {
-            IsVisibleContainerIniciar = false;
+            IsVisibleBtnIniciar = false;
             IsVisibleContainerContagem = true;
             //fazer um if se a pessoa acertou ou errou
             int tempo = Armazanemanto.Armazenamento.Jogo.TempoPalavra;
@@ -122,7 +122,7 @@ namespace Mimica.ViewModel
         {
             Palavra = "Sentar";
             IsVisibleBtnMostrar = false;
-            IsVisibleContainerIniciar = true;
+            IsVisibleBtnIniciar = true;
             IsVisibleContainerDecisao = true;
 
             var NumNivel = Armazanemanto.Armazenamento.Jogo.NivelNumerico;
