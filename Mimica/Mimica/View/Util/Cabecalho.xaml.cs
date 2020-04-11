@@ -15,6 +15,17 @@ namespace Mimica.View.Util
         public Cabecalho()
         {
             InitializeComponent();
+            BindingContext = new ViewModel.CabecalhoViewModel();
+        }
+
+        private void TapGestureRecognizer_Tapped(object sender, EventArgs e)
+        {
+            var viewModel = (ViewModel.CabecalhoViewModel)BindingContext;
+
+            if(viewModel.Sair.CanExecute(null))
+            {
+                viewModel.Sair.Execute(null);
+            }
         }
     }
 }

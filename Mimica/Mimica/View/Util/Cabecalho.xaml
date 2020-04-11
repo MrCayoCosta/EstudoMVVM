@@ -8,6 +8,11 @@
   <ContentView.Content>
       <StackLayout Style="{StaticResource Cabecalho}">
             <Label Text="Jogo de Mímica" Style="{StaticResource CabecalhoTitulo}"/>
-      </StackLayout>
+            <Label Text="Sair" HorizontalOptions="End">
+                <Label.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped"/>
+                </Label.GestureRecognizers>
+            </Label>
+        </StackLayout>
   </ContentView.Content>
 </ContentView>
