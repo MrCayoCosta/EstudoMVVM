@@ -16,8 +16,8 @@
         <StackLayout Spacing="0">
             <cab:Cabecalho/>
             <StackLayout Style="{StaticResource Container}">
-                <Label Text="{Binding NumeroGrupo}"/>
-                <Label Text="{Binding NomeGrupo}"/>
+                <!--<Label Text="{Binding NumeroGrupo}"/>
+                <Label Text="{Binding NomeGrupo}"/>-->
                 <Frame BorderColor="#F78053" VerticalOptions="FillAndExpand" Padding="0">
                     <StackLayout Style="{StaticResource ContainerEspecial}">
                         <StackLayout Orientation="Horizontal">

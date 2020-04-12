@@ -18,7 +18,7 @@ namespace Mimica.Armazanemanto
             //Médio
             new string[]{"Marceneiro", "Carpinteiro", "Amarelo", "Limão", "Abelha", "Polícia", "Mundo", "Fogo"},
 
-           //Difícil
+            //Difícil
             new string[]{"Paralelepípedo", "Lanterna", "Lâmpada", "Bombeiro", "Batman", "Homem de ferro", "Prédio"},
        };
     }
