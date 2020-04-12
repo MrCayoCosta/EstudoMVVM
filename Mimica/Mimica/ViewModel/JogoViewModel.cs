@@ -106,6 +106,8 @@ namespace Mimica.ViewModel
             IsVisibleContainerContagem = true;
             //fazer um if se a pessoa acertou ou errou
             int tempo = Armazanemanto.Armazenamento.Jogo.TempoPalavra;
+            tempo--;
+            TextoContagem = tempo.ToString();
             Device.StartTimer(TimeSpan.FromSeconds(1), () =>
             {
                 TextoContagem = tempo.ToString();
@@ -130,7 +132,7 @@ namespace Mimica.ViewModel
             if (NumNivel == 0)
             {
                 Random r = new Random();
-                int nivel = r.Next(0, 2);
+                int nivel = r.Next(0, 3);
                 int i = r.Next(0, Armazanemanto.Armazenamento.Palavras[nivel].Length);
                 Palavra = Armazanemanto.Armazenamento.Palavras[nivel][i];
                 PalavraPontuacao = (byte)((nivel == 0) ? 1 : (nivel == 1) ? 3 : 5);
